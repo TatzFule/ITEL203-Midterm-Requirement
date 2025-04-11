@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creatine Capsules Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body
+        {
+            font-family: 'Orbitron', sans-serif;
+            cursor: default;
+        }
+
+        .quantity-popup
+        {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border: 2px solid #ccc;
+            padding: 20px;
+            z-index: 9999;
+            display: none;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        .quantity-popup button
+        {
+            margin: 0 10px;
+        }
+
+        .navbar-logo 
+        {
+            height: 60px;
+        }
+
+        .product-detail-img 
+        {
+            width: 100%;
+            max-width: 400px;
+            max-height: 395px;
+        }
+
+        .btn 
+        {
+            cursor: pointer;
+        }
+
+        a, a:hover, a:focus 
+        {
+            text-decoration: none;
+        }
+
+        .btn-primary
+        {
+            background-color: #424242;
+            border-color: #424242;
+        }
+
+        .btn-primary:hover
+        {
+            background-color: #212428;
+            border-color: #212428;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark" style="height: 75px;">
+    <div class="container position-relative">
+        <div class="position-relative w-100">
+            <a class="navbar-brand position-absolute top-50 start-50 translate-middle" href="index.html">
+                <img src="images/logo.png" alt="LATZ FULE GAINZ Logo" class="navbar-logo">
+            </a>
+        </div>
+        <a class="btn btn-outline-light position-absolute top-50 translate-middle-y" style="right: 40px;" href="cart.html">Cart</a>
+        <a href="index.html" class="btn btn-outline-light position-absolute top-50 translate-middle-y" style="left: 10px;">Go Back</a>
+    </div>
+</nav>
+
+<div class="container mt-5 text-center">
+    <h3>Creatine Capsules<br>Optimum Nutrition Gold Standard</h3>
+    <img src="images/creatine.jpg" class="product-detail-img" alt="Creatine Capsules">
+    <p class="mt-3">Creatine, a naturally occurring compound, is an essential molecule that the body synthesizes and can also be obtained from dietary sources such as meat and fish. This crucial compound serves a fundamental role in the body's energy production processes by facilitating the replenishment of adenosine triphosphate (ATP) levels in muscle cells. Particularly notable is creatine's contribution to supplying energy during high-intensity, short-duration activities, where its rapid availability enhances muscle performance and endurance. Through its ability to support ATP regeneration, creatine enables muscle cells to sustain intense contractions, promoting strength and power output. In essence, creatine acts as a vital player in optimizing physical performance, making it a popular supplement choice among athletes and fitness enthusiasts seeking to enhance their exercise capabilities and overall muscle function.</p>
+    <p><strong>Price: $43.99</strong></p>
+    <a href="#" class="btn btn-primary btn-lg mt-3" onclick="showQuantityPopup('Creatine Capsules', 43.99)">Add to Cart</a>
+</div>
+
+<div class="quantity-popup" id="quantityPopup">
+    <h5>Select Quantity</h5>
+    <div class="d-flex justify-content-center align-items-center mt-3">
+        <button class="btn btn-secondary" onclick="changeQuantity(-1)">−</button>
+        <span id="quantityDisplay" class="mx-3 fs-4">1</span>
+        <button class="btn btn-secondary" onclick="changeQuantity(1)">+</button>
+    </div>
+    <div class="mt-3">
+        <button class="btn btn-success" onclick="confirmAddToCart()">Confirm</button>
+        <button class="btn btn-danger" onclick="hideQuantityPopup()">Cancel</button>
+    </div>
+</div>
+
+<script>
+    let selectedProduct = {};
+    let quantity = 1;
+
+    function showQuantityPopup(name, price) 
+    {
+        selectedProduct = { name, price };
+        quantity = 1;
+        document.getElementById('quantityDisplay').textContent = quantity;
+        document.getElementById('quantityPopup').style.display = 'block';
+    }
+
+    function hideQuantityPopup() 
+    {
+        document.getElementById('quantityPopup').style.display = 'none';
+    }
+
+    function changeQuantity(change) 
+    {
+        quantity = Math.max(1, quantity + change);
+        document.getElementById('quantityDisplay').textContent = quantity;
+    }
+
+    function confirmAddToCart() 
+    {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        let existingItem = cart.find(item => item.name === selectedProduct.name);
+        if (existingItem) 
+        {
+            existingItem.quantity += quantity;
+            existingItem.totalPrice = existingItem.quantity * existingItem.price;
+        } 
+        else 
+        {
+            cart.push({
+                name: selectedProduct.name,
+                price: selectedProduct.price,
+                quantity: quantity,
+                totalPrice: selectedProduct.price * quantity
+            });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        hideQuantityPopup();
+        alert(`${selectedProduct.name} (x${quantity}) successfully added to cart!`);
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

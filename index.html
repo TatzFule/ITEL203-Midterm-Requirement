@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latz Gainz Homepage</title>
+    <!--Bootstrap for layout and Custom Font-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /*Body and Nav Styling*/
+        body
+        {
+            font-family: 'Orbitron', sans-serif;
+            cursor: default;
+        }
+
+        .navbar-logo
+        {
+            height: 60px;
+            transform: translateX(7px);
+        }
+
+        .table th, .table td
+        {
+            vertical-align: middle;
+        }
+
+        .table
+        {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-hover tbody tr:hover
+        {
+            background-color: #f1f1f1;
+        }
+
+        .product-img
+        {
+            transition: transform 0.3s ease;
+        }
+
+        .product-img:hover
+        {
+            transform: scale(1.05);
+        }
+
+        h2
+        {
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .btn
+        {
+            cursor: pointer;
+        }
+
+        a, a:hover, a:focus
+        {
+            text-decoration: none;
+        }
+        
+        .btn-primary
+        {
+            background-color: #424242;
+            border-color: #424242;
+        }
+
+        .btn-primary:hover
+        {
+            background-color: #212428;
+            border-color: #212428;
+        }
+    </style>
+</head>
+
+<!--Navbar with Brand Logo and Cart-->
+<nav class="navbar navbar-dark bg-dark" style="height: 75px;">
+    <div class="container position-relative">
+        <div class="position-relative w-100">
+            <a class="navbar-brand position-absolute top-50 start-50 translate-middle" href="index.html">
+                <img src="images/logo.png" alt="LATZ FULE GAINZ Logo" class="navbar-logo">
+            </a>
+        </div>
+        <a class="btn btn-outline-light position-absolute top-50 translate-middle-y" style="right: 40px;" href="cart.html">Cart</a>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h2 class="text-center">Get Shredded Now!</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>More Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--Product 1-->
+                <tr>
+                    <td><img src="images/whey_concentrate.jpg" class="product-img" width = "300" height = "300"></td>
+                    <td><br><br><strong>Whey Protein Concentrate</strong><hr>Whey protein concentrate (WPC) is a common, cost-effective protein supplement<br>derived from the whey, a byproduct of cheese production, containing a protein<br>content range of 58% to 89% and also includes fat, lactose, and immune-enhancing peptides.</td>
+                    <td><br><br><br><br><br><strong>$79.99</strong></td>
+                    <td><br><br><br><br><br><a href="product1.html" class="btn btn-primary">View Product</a></td>
+                </tr>
+                <!--Product 2-->
+                <tr>
+                    <td><img src="images/whey_isolate.jpg" class="product-img" width = "300" height = "300"></td>
+                    <td><br><br><strong>Whey Protein Isolate</strong><hr>Whey protein isolate (WPI) is a highly processed form of whey protein,<br>derived from the liquid byproduct of cheese production, that is further processed to remove<br>fat and lactose, resulting in a product with a high protein content (typically over 90%).</td>
+                    <td><br><br><br><br><br><strong>$79.99</strong></td>
+                    <td><br><br><br><br><br><a href="product2.html" class="btn btn-primary">View Product</a></td>
+                </tr> 
+                <!--Product 3-->   
+                <tr>
+                    <td><img src="images/creatine.jpg" class="product-img" width = "300" height = "300"></td>
+                    <td><br><br><strong>Creatine Capsules</strong><hr>Creatine is a naturally occurring compound, synthesized in the body and also found in<br>certain foods like meat and fish, that plays a key role in providing energy to<br>muscle cells, particularly during high-intensity, short-duration activities.</td>
+                    <td><br><br><br><br><br><strong>$43.99</strong></td>
+                    <td><br><br><br><br><br><a href="product3.html" class="btn btn-primary">View Product</a></td>
+                </tr>
+                <!--Product 4-->
+                <tr>
+                    <td><img src="images/glutamine.jpg" class="product-img" width = "300" height = "300"></td>
+                    <td><br><br><strong>Glutamine Capsules</strong><hr>Glutamine is a naturally occurring, non-essential amino acid, meaning your body<br>produces it, and it's also found in many foods, serving as a building block for<br>proteins and playing a crucial role in immune and digestive system function.</td>
+                    <td><br><br><br><br><br><strong>$43.99</strong></td>
+                    <td><br><br><br><br><br><a href="product4.html" class="btn btn-primary">View Product</a></td>
+                </tr>  
+                <!--Product 5-->
+                <tr>
+                    <td><img src="images/bcaa.jpg" class="product-img" width = "300" height = "300"></td>
+                    <td><br><br><strong>BCAA Capsules</strong><hr>Branched-chain amino acids (BCAAs) are essential nutrients including leucine, isoleucine,<br>and valine. They're found in meat, dairy, and legumes. BCAAs stimulate the building of protein<br>in muscle and possibly reduce muscle breakdown.</td>
+                    <td><br><br><br><br><br><strong>$37.99</strong></td>
+                    <td><br><br><br><br><br><a href="product5.html" class="btn btn-primary">View Product</a></td>
+                </tr>
+                <!--Product 6-->
+                <tr>
+                    <td><img src="images/multivitamin.jpg" class="product-img" width = "300" height = "300"></td>
+                    <td><br><br><strong>Multivitamin Capsules</strong><hr>A multivitamin is a preparation intended to serve as a dietary supplement with vitamins,<br>dietary minerals, and other nutritional elements. Such preparations are available in the form of<br>tablets, capsules, pastilles, powders, liquids, gummies, or injectable formulations.</td>
+                    <td><br><br><br><br><br><strong>$29.99</strong></td>
+                    <td><br><br><br><br><br><a href="product6.html" class="btn btn-primary">View Product</a></td>
+                </tr>  
+                <!--Product 7-->
+                <tr>
+                    <td><img src="images/omega3.jpg" class="product-img" width = "300" height = "300"></td>
+                    <td><br><br><strong>Omega 3 Fish Oil Capsules</strong><hr>Omega-3 fish oil capsules are a dietary supplement containing<br>concentrated omega-3 fatty acids, primarily EPA and DHA, derived from fish oil,<br>often used to support heart health and reduce inflammation.</td>
+                    <td><br><br><br><br><br><strong>$39.99</strong></td>
+                    <td><br><br><br><br><br><a href="product7.html" class="btn btn-primary">View Product</a></td>
+                </tr>  
+                <!--Product 8-->
+                <tr>
+                    <td><img src="images/casein.jpg" class="product-img" width = "300" height = "300"></td>
+                    <td><br><br><strong>Casein Powder</strong><hr>Casein powder is a slow-digesting protein derived from milk, a popular supplement<br>for muscle recovery and growth, known for its sustained release of amino acids.</td>
+                    <td><br><br><br><br><br><strong>$44.99</strong></td>
+                    <td><br><br><br><br><br><a href="product8.html" class="btn btn-primary">View Product</a></td>
+                </tr>  
+                <!--Product 9-->
+                <tr>
+                    <td><img src="images/maltodextrin.jpg" class="product-img" width = "300" height = "300"></td>
+                    <td><br><br><strong>Maltodextrin Powder</strong><hr>Maltodextrin is a white, tasteless powder derived from starch<br>(like corn, rice, potato, or wheat) and used as a food additive to thicken, bind,<br>and act as a filler or preservative in various foods and beverages.</td>
+                    <td><br><br><br><br><br><strong>$33.99</strong></td>
+                    <td><br><br><br><br><br><a href="product9.html" class="btn btn-primary">View Product</a></td>
+                </tr>  
+                <!--Product 10-->
+                <tr>
+                    <td><img src="images/shaker.jpg" class="product-img" width = "300" height = "300"></td>
+                    <td><br><br><strong>Powder Shaker</strong><hr>A Shaker bottle helps mix protein powder and water/milk to get a<br>smooth consistency of your drink without using any electric blender. <br>Your shaker bottle helps you to stay hydrated during your workout.</td>
+                    <td><br><br><br><br><br><strong>$7.99</strong></td>
+                    <td><br><br><br><br><br><a href="product10.html" class="btn btn-primary">View Product</a></td>
+                </tr>                    
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
